@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <x-header />
-        <main>
+        <main class="main">
             @yield('content')
         </main>
         <x-footer />
