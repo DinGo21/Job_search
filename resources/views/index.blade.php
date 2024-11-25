@@ -5,7 +5,7 @@
     <div class="container">
         <table class="table">
             <thead>
-                <tr>
+                <tr class="row">
                     <th class="label" scope="col">Job</th>
                     <th class="label" scope="col">Options</th>
                 </tr>

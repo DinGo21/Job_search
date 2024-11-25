@@ -1,0 +1,118 @@
+/* index */
+
+.title {
+	font-size: 4rem;
+	margin: 3rem;
+	margin-top: 8rem;
+	text-align: center;
+}
+
+.table {
+	-webkit-box-shadow: 0px 12px 10px 0px rgba(224,224,224,1);
+	-moz-box-shadow: 0px 12px 10px 0px rgba(224,224,224,1);
+	box-shadow: 0px 12px 10px 0px rgba(224,224,224,1);
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 1rem;
+	margin: auto;
+	margin-bottom: 2rem;
+	width: 100%;
+}
+
+@media (min-width: 480px) {
+	.table {
+		width: 94%;
+	}
+}
+
+@media (min-width: 768px) {
+	.table {
+		width: 80%;
+	}
+}
+
+.cell, .label {
+	border: 1.5px solid var(--gray);
+	padding: 1rem;
+}
+
+.label {
+	background-color: var(--gray);
+}
+
+.label:first-child {
+	border-top-left-radius: 1rem;
+}
+
+.label:last-child {
+	border-top-right-radius: 1rem;
+}
+
+.row:last-child .cell:first-child, .row:last-child .cell:last-child {
+	border-bottom-style: solid;
+}
+
+.row:last-child .cell:first-child {
+	border-bottom-left-radius: 1rem;
+}
+
+.row:last-child .cell:last-child {
+	border-bottom-right-radius: 1rem;
+}
+
+.cell {
+	border-bottom-style: none;
+}
+
+.cell:first-child {
+	border-right-style: none;
+}
+
+.job {
+	display: inline-flex;
+}
+
+.jobImage {
+	width: 6rem;
+	height: 6rem;
+}
+
+.jobDetails {
+	margin-left: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.jobTitle {
+	margin-bottom: 0.5rem;
+}
+
+.jobStatus {
+	color: var(--darkGray);
+	font-weight: 500;
+}
+
+.jobStatusActive {
+	color: var(--green);
+}
+
+.jobStatusNotActive {
+	color: var(--red);
+}
+
+.options {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.optionsDetails, .optionsDelete {
+	padding: 0.5rem;
+	border-radius: 1rem;
+	transition: background-color 0.2s ease;
+}
+
+.optionsDetails:hover, .optionsDelete:hover {
+	background-color: rgba(68, 68, 68, 0.1);
+}

@@ -1,7 +1,12 @@
+@import url(index.css);
+
 :root {
 	--white: #FFFFFF;
 	--black: #1f1f1f;
 	--gray: #e3e3e3;
+	--darkGray: #7a7a7a;
+	--red: #ff0000;
+	--green: #00e842;
 	--primary: #0003ac;
 }
 
@@ -21,7 +26,7 @@ body {
 	font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
 	color: var(--black);
 	margin: 0;
 }
@@ -35,9 +40,18 @@ a {
 	color: var(--black);
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 /* header */
 
 .header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
 	background-color: var(--white);
 	display: flex;
 	justify-content: space-between;
@@ -93,6 +107,7 @@ a {
 }
 
 .footerCopyright {
+	margin: 2.5rem;
 	color: var(--gray);
 }
 
