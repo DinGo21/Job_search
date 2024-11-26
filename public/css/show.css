@@ -1,0 +1,95 @@
+.show {
+	width: 95%;
+	margin: auto;
+	margin-top: 8rem;
+}
+
+@media (min-width: 768px) {
+	.show {
+		width: 80%;
+	}
+}
+
+.showJob, .showDescription, .showOptions {
+	margin-bottom: 3.5rem;
+}
+
+.showJob {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding-bottom: 3.5rem;
+	border-bottom: 1px solid var(--gray);
+	gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.showJob {
+		flex-direction: row;
+		text-align: start;
+	}
+}
+
+.showJobImage {
+	width: 18rem;
+	height: 18rem;
+	margin: auto;
+}
+
+@media (min-width: 768px) {
+	.showJobImage {
+		margin: 0;
+		margin-left: 4rem;
+	}
+}
+
+.showJobTitle {
+	font-size: 4rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.showJobCompany {
+	font-size: 2.8rem;
+	margin-bottom: 2.2rem;
+	color: var(--darkGray);
+}
+
+.showDetailsStatus {
+	font-size: 1.8rem;
+	font-weight: 500;
+	color: var(--darkGray);
+}
+
+.showDescriptionText {
+	font-size: 1.8rem;
+}
+
+.showOptions {
+	display: flex;
+	margin-right: 2rem;
+	justify-content: center;
+}
+
+@media (min-width: 768px) {
+	.showOptions {
+		justify-content: end;
+	}
+}
+
+.showReturn, .showDelete {
+	border-radius: 1rem;
+	font-weight: 500;
+	font-size: 1.8rem;
+	padding: 1rem 2rem 1rem 2rem;
+	color: var(--white);
+	background-color: var(--primary);
+	text-align: center;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	transition: background-color 0.1s ease;
+}
+
+.showReturn:hover, .showDelete:hover {
+	background-color: #0004ff;
+}
