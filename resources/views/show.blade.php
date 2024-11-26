@@ -27,7 +27,7 @@
             <p class="showDescriptionText">{{$job->description}}</p>
         </section>
         <section class="showOptions">
-            <a class="showDelete" href="">Delete</a>
+            <a class="showDelete" href="{{route('index') . '?action=delete&id=' . $job->id}}">Delete</a>
             <a class="showReturn" href="{{route('index')}}">Return</a>
         </section>
     </div>
