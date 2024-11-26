@@ -22,9 +22,8 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
@@ -32,13 +31,15 @@ class JobController extends Controller
     {
         //
     }
-
+    
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
+        $job = Job::find($id);
+
+        return view('show', compact('job'));
     }
 
     /**

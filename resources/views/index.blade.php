@@ -2,7 +2,7 @@
 
 @section('content')
 	<h2 class="title">Your Offers</h2>
-    <div class="container">
+    <div>
         <table class="table">
             <thead>
                 <tr class="row">
@@ -31,7 +31,7 @@
 						</td>
                         <td class="cell">
                             <div class="options">
-                                <a class="optionsDetails" href="">
+                                <a class="optionsDetails" href="{{route('show', $job->id)}}">
                                     <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="none"  
                                         stroke="#0003ac"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
                                         class="icon icon-tabler icons-tabler-outline icon-tabler-dots"><path stroke="none" d="M0 0h24v24H0z" 
