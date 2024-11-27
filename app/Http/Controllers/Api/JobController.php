@@ -36,7 +36,6 @@ class JobController extends Controller
             'company_image' => $request->company_image,
             'status' => $request->status
         ]);
-
         $job->save();
         return response()->json($job, 200);
     }

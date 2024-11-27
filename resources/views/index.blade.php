@@ -52,7 +52,7 @@
                                     </a>
                                 @endif
                                 <a class="option optionsDetails" href="{{route('show', $job->id)}}">
-                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="none"  
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="none"  
                                     stroke="#7a7a7a"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
                                     class="icon icon-tabler icons-tabler-outline icon-tabler-dots"><path stroke="none" d="M0 0h24v24H0z" 
                                     fill="none"/><path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 12m-1 0a1 1 0 1 0 2 

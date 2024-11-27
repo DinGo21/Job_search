@@ -20,6 +20,15 @@ class JobTest extends TestCase
                 ->assertViewIs('index');
     }
 
+    // public function test_PauseOneElementStatusFromIndex()
+    // {
+    //     $this->withoutExceptionHandling();
+
+    //     Job::factory(1)->create(['status' => 1]);
+    //     $this->assertDatabaseCount('jobs', 1);
+    //     $response = $this->get(route('index') . '?action=pause&id=1')
+    // }
+
     public function test_DeleteOneElementFromIndex()
     {
         $this->withoutExceptionHandling();

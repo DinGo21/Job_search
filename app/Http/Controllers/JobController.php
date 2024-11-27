@@ -18,6 +18,16 @@ class JobController extends Controller
             $this->destroy($request->id);
             return Redirect::to(route('index'));
         }
+        if ($request->action === 'pause')
+        {
+            $this->edit($request->id, 0);
+            return Redirect::to(route('index'));
+        }
+        if ($request->action === 'resume')
+        {
+            $this->edit($request->id, 1);
+            return Redirect::to(route('index'));
+        }
         $jobs = Job::all();
         return view('index', compact('jobs'));
     }
@@ -50,10 +60,10 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    // public function edit(string $id)
-    // {
-    //     //
-    // }
+    public function edit(string $id, bool $status)
+    {
+        Job::find($id)->update(['status' => $status]);
+    }
 
     /**
      * Update the specified resource in storage.
