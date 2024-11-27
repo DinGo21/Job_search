@@ -20,14 +20,29 @@ class JobTest extends TestCase
                 ->assertViewIs('index');
     }
 
-    // public function test_PauseOneElementStatusFromIndex()
-    // {
-    //     $this->withoutExceptionHandling();
+    public function test_PauseOneElementStatusFromIndex()
+    {
+        $this->withoutExceptionHandling();
 
-    //     Job::factory(1)->create(['status' => 1]);
-    //     $this->assertDatabaseCount('jobs', 1);
-    //     $response = $this->get(route('index') . '?action=pause&id=1')
-    // }
+        $job = Job::factory(1)->create(['status' => 1]);
+        $this->assertDatabaseCount('jobs', 1);
+        $response = $this->get(route('index') . '?action=pause&id=1');
+        $response->assertStatus(302);
+        $job = Job::find('1');
+        $this->assertEquals($job->status, 0);
+    }
+
+    public function test_ResumeOneElementStatusFromIndex()
+    {
+        $this->withoutExceptionHandling();
+
+        $job = Job::factory(1)->create(['status' => 0]);
+        $this->assertDatabaseCount('jobs', 1);
+        $response = $this->get(route('index') . '?action=resume&id=1');
+        $response->assertStatus(302);
+        $job = Job::find('1');
+        $this->assertEquals($job->status, 1);
+    }
 
     public function test_DeleteOneElementFromIndex()
     {
