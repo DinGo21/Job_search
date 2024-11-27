@@ -61,12 +61,11 @@
 	gap: 2rem;
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
 	.showDetails {
-		margin: auto;
-		justify-content: center;
+		justify-content: start;
 	}
-} */
+}
 
 .showDetailsStatus, .showDetailsCreatedAt, .showDetailsUpdatedAt {
 	font-size: 1.65rem;
