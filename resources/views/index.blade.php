@@ -26,6 +26,8 @@
                                             <span class="jobStatusNotActive">finished</span>
                                         @endif
                                     </p>
+                                    <p class="jobCreatedAt">created: <span id="createdAt">{{$job->created_at}}</span></p>
+                                    <p class="jobUpdatedAt">update: <span id="updatedAt">{{$job->updated_at}}</span></p>
                                 </div>
                             </div>
 						</td>

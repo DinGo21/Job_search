@@ -1,4 +1,13 @@
-const path = window.location.pathname.split('/').pop();
+const PATH = window.location.pathname.split('/').pop();
+
+function timestampsFormat()
+{
+	const createdAt = document.querySelectorAll("#createdAt");
+	const updatedAt = document.querySelectorAll("#updatedAt");
+
+	createdAt.forEach((span) => span.innerText = span.innerText.split(' ')[0]);
+	updatedAt.forEach((span) => span.innerText = span.innerText.split(' ')[0]);
+}
 
 function setHeaderLinkActive(path)
 {
@@ -10,4 +19,5 @@ function setHeaderLinkActive(path)
 	}
 }
 
-setHeaderLinkActive(path);
+setHeaderLinkActive(PATH);
+timestampsFormat();
