@@ -55,8 +55,21 @@
 	color: var(--darkGray);
 }
 
-.showDetailsStatus {
-	font-size: 1.8rem;
+.showDetails {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+
+/* @media (min-width: 768px) {
+	.showDetails {
+		margin: auto;
+		justify-content: center;
+	}
+} */
+
+.showDetailsStatus, .showDetailsCreatedAt, .showDetailsUpdatedAt {
+	font-size: 1.65rem;
 	font-weight: 500;
 	color: var(--darkGray);
 }

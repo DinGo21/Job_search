@@ -16,18 +16,20 @@
                         <td class="cell">
                             <div class="job">
                                 <img class="jobImage" src="{{$job->company_image}}" alt="{{$job->company}}">
-                                <div class="jobDetails">
+                                <div class="jobContent">
                                     <h4 class="jobTitle">{{$job->title}}</h4>
-                                    <p class="jobStatus">
-                                        status:
-                                        @if ($job->status === 1)
-                                            <span class="jobStatusActive">in progress<span>
-                                        @else
-                                            <span class="jobStatusNotActive">finished</span>
-                                        @endif
-                                    </p>
-                                    <p class="jobCreatedAt">created: <span id="createdAt">{{$job->created_at}}</span></p>
-                                    <p class="jobUpdatedAt">update: <span id="updatedAt">{{$job->updated_at}}</span></p>
+                                    <div class="jobDetails">
+                                        <p class="jobStatus">
+                                            status:
+                                            @if ($job->status === 1)
+                                                <span class="jobStatusActive">in progress<span>
+                                            @else
+                                                <span class="jobStatusNotActive">finished</span>
+                                            @endif
+                                        </p>
+                                        <p class="jobCreatedAt">created: <span id="createdAt">{{$job->created_at}}</span></p>
+                                        <p class="jobUpdatedAt">update: <span id="updatedAt">{{$job->updated_at}}</span></p>
+                                    </div>
                                 </div>
                             </div>
 						</td>
