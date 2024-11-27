@@ -135,12 +135,12 @@
 	}
 }
 
-.optionsDetails, .optionsDelete {
+.option {
 	padding: 0.5rem;
 	border-radius: 1rem;
 	transition: background-color 0.2s ease;
 }
 
-.optionsDetails:hover, .optionsDelete:hover {
+.option:hover {
 	background-color: rgba(68, 68, 68, 0.1);
 }
