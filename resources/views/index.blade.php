@@ -2,10 +2,11 @@
 
 @section('content')
 	<h2 class="title">Your Offers</h2>
+    <input type="text" id="input" placeholder="Search for names..">
     <div>
-        <table class="table">
+        <table id="table" class="table">
             <thead>
-                <tr class="row">
+                <tr>
                     <th class="label" scope="col">Job</th>
                     <th class="label" scope="col">Options</th>
                 </tr>
