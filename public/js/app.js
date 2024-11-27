@@ -18,7 +18,7 @@ input.addEventListener('input', function ()
 			rows[i].style.display = "";
 		}
 	}
-})
+});
 
 function timestampsFormat()
 {

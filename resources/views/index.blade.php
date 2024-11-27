@@ -2,8 +2,8 @@
 
 @section('content')
 	<h2 class="title">Your Offers</h2>
-    <input type="text" id="input" placeholder="Search for names..">
-    <div>
+    <div class="container">
+        <input type="text" id="input" class="searchBar" placeholder="🔍Example: Backend Engineer...">
         <table id="table" class="table">
             <thead>
                 <tr>
