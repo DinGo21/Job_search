@@ -24,6 +24,17 @@
         <section class="showDescription">
             <p class="showDescriptionText">{{$job->description}}</p>
         </section>
+        <section class="feedback">
+            @foreach ($job->feedback as $feed)
+                <article class="comment">
+                    <p>{{$feed->comment}}</p>
+                    <div class="commentDetails">
+                        <p class="commentCreatedAt">{{$feed->created_at}}</p>
+                        <p class="commentUpdatedAt">{{$feed->updated_at}}</p>
+                    </div>
+                </article>
+            @endforeach
+        </section>
         <section class="showOptions">
             <a class="showReturn" href="{{route('index')}}">Return</a>
         </section>

@@ -53,6 +53,7 @@ class JobController extends Controller
     public function show(string $id)
     {
         $job = Job::find($id);
+
         if ($job)
             return view('show', compact('job'));
     }
