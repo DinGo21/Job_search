@@ -77,6 +77,50 @@
 	font-size: 1.8rem;
 }
 
+.feedback {
+	width: 90%;
+	margin: auto;
+}
+
+@media (min-width: 768px) {
+	.feedback {
+		width: 80%;
+	}
+}
+
+.feedbackTitle {
+	text-align: center;
+	color: var(--darkGray);
+	font-size: 2.5rem;
+	margin-bottom: 1.2rem;
+}
+
+@media (min-width: 768px) {
+	.feedbackTitle {
+		text-align: start;
+	}
+}
+
+.comment {
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(219,219,219,1);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(219,219,219,1);
+	box-shadow: 10px 10px 5px 0px rgba(219,219,219,1);
+	background-color: #f7f7f7;
+	margin-bottom: 2rem;
+	padding: 1.5rem;
+}
+.commentText {
+	font-weight: 500;
+	margin-bottom: 1.5rem;
+}
+
+.commentCreatedAt {
+	border-radius: 1rem;
+	padding: 1rem;
+	font-weight: 500;
+	color: var(--darkGray);
+}
+
 .showOptions {
 	display: flex;
 	margin-right: 2rem;

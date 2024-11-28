@@ -25,12 +25,12 @@
             <p class="showDescriptionText">{{$job->description}}</p>
         </section>
         <section class="feedback">
+            <h3 class="feedbackTitle">Feedback:</h3>
             @foreach ($job->feedback as $feed)
                 <article class="comment">
-                    <p>{{$feed->comment}}</p>
+                    <p class="commentText">{{$feed->comment}}</p>
                     <div class="commentDetails">
                         <p class="commentCreatedAt">{{$feed->created_at}}</p>
-                        <p class="commentUpdatedAt">{{$feed->updated_at}}</p>
                     </div>
                 </article>
             @endforeach
