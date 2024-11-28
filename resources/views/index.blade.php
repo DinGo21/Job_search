@@ -25,7 +25,7 @@
                                             @if ($job->status === 1)
                                                 <span class="jobStatusActive">in progress<span>
                                             @else
-                                                <span class="jobStatusNotActive">paused</span>
+                                                <span class="jobStatusNotActive">finished</span>
                                             @endif
                                         </p>
                                         <p class="jobCreatedAt">created: <span id="createdAt">{{$job->created_at}}</span></p>
@@ -38,18 +38,22 @@
                             <div class="options">
                                 @if ($job->status === 1)
                                     <a class="option optionsPause" href="?action=pause&id={{$job->id}}">
-                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  
-                                        fill="#0003ac"  class="icon icon-tabler icons-tabler-filled icon-tabler-player-pause">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 
-                                        2h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z" /><path d="M17 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h2a2 2 
-                                        0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z" /></svg>
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="none"  
+                                    stroke="#00e842"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"><path stroke="none" 
+                                    d="M0 0h24v24H0z" fill="none"/><path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" /><path d="M3.69 8.56a9 9 
+                                    0 0 0 -.69 3.44" /><path d="M3.69 15.44a9 9 0 0 0 1.95 2.92" /><path d="M8.56 20.31a9 9 0 0 0 3.44 
+                                    .69" /><path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95" /><path d="M20.31 15.44a9 9 0 0 0 .69 -3.44" />
+                                    <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92" /><path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69" /><path 
+                                    d="M9 12l2 2l4 -4" /></svg>
                                     </a>
                                 @else
                                     <a class="option optionsResume" href="?action=resume&id={{$job->id}}">
-                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  
-                                        fill="#0003ac"  class="icon icon-tabler icons-tabler-filled icon-tabler-player-play"><path 
-                                        stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 
-                                        0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" /></svg>
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="none"  
+                                        stroke="#0003ac"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon 
+                                        icon-tabler icons-tabler-outline icon-tabler-reload"><path stroke="none" d="M0 0h24v24H0z" 
+                                        fill="none"/><path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1 7.935 1.007 9.425 4.747" 
+                                        /><path d="M20 4v5h-5" /></svg>
                                     </a>
                                 @endif
                                 <a class="option optionsDetails" href="{{route('show', $job->id)}}">
