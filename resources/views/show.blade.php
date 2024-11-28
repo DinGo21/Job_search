@@ -30,7 +30,7 @@
                 <article class="comment">
                     <p class="commentText">{{$feed->comment}}</p>
                     <div class="commentDetails">
-                        <p class="commentCreatedAt">{{$feed->created_at}}</p>
+                        <p id="createdAt" class="commentCreatedAt">{{$feed->created_at}}</p>
                     </div>
                 </article>
             @endforeach

@@ -107,6 +107,7 @@
 	box-shadow: 10px 10px 5px 0px rgba(219,219,219,1);
 	background-color: #f7f7f7;
 	margin-bottom: 2rem;
+	border: 1px solid var(--gray);
 	padding: 1.5rem;
 }
 .commentText {

@@ -1,24 +1,30 @@
 const path = window.location.pathname.split('/').pop();
-const input = document.getElementById('input');
 
-input.addEventListener('input', function ()
+function indexEvents()
 {
-  	const filter = this.value.toUpperCase();
-  	const table = document.getElementById("table");
-  	const rows = table.querySelectorAll(".row");
-	let	  cell, value;
+	const input = document.getElementById('input');
 
-	for (let i = 0; i < rows.length; i++) 
+	if (!input)
+		return ;
+	input.addEventListener('input', function ()
 	{
-		cell = rows[i].querySelectorAll('.cell')[0];
-		value = cell.textContent || cell.innerText;
-		rows[i].style.display = "none";
-		if (value.toUpperCase().indexOf(filter) > -1)
+		  const filter = this.value.toUpperCase();
+		  const table = document.getElementById("table");
+		  const rows = table.querySelectorAll(".row");
+		let	  cell, value;
+	
+		for (let i = 0; i < rows.length; i++) 
 		{
-			rows[i].style.display = "";
+			cell = rows[i].querySelectorAll('.cell')[0];
+			value = cell.textContent || cell.innerText;
+			rows[i].style.display = "none";
+			if (value.toUpperCase().indexOf(filter) > -1)
+			{
+				rows[i].style.display = "";
+			}
 		}
-	}
-});
+	});
+}
 
 function timestampsFormat()
 {
@@ -40,4 +46,5 @@ function setHeaderLinkActive(path)
 }
 
 setHeaderLinkActive(path);
+indexEvents();
 timestampsFormat();
