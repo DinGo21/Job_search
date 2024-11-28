@@ -1,16 +1,28 @@
 const path = window.location.pathname.split('/').pop();
 
+function showFeedback()
+{
+	const feedBackTitle = document.getElementById("feedbackTitle");
+
+	if (!feedBackTitle)
+		return ;
+	if (document.querySelectorAll(".comment").length === 0)
+	{
+		feedBackTitle.style.display = "none";
+	}
+}
+
 function indexEvents()
 {
-	const input = document.getElementById('input');
+	const input = document.getElementById("input");
 
 	if (!input)
 		return ;
-	input.addEventListener('input', function ()
+	input.addEventListener("input", function ()
 	{
-		  const filter = this.value.toUpperCase();
-		  const table = document.getElementById("table");
-		  const rows = table.querySelectorAll(".row");
+		const filter = this.value.toUpperCase();
+		const table = document.getElementById("table");
+		const rows = table.querySelectorAll(".row");
 		let	  cell, value;
 	
 		for (let i = 0; i < rows.length; i++) 
@@ -48,3 +60,4 @@ function setHeaderLinkActive(path)
 setHeaderLinkActive(path);
 indexEvents();
 timestampsFormat();
+showFeedback();

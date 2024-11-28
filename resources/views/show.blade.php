@@ -25,7 +25,7 @@
             <p class="showDescriptionText">{{$job->description}}</p>
         </section>
         <section class="feedback">
-            <h3 class="feedbackTitle">Feedback:</h3>
+            <h3 id="feedbackTitle" class="feedbackTitle">Feedback:</h3>
             @foreach ($job->feedback as $feed)
                 <article class="comment">
                     <p class="commentText">{{$feed->comment}}</p>
