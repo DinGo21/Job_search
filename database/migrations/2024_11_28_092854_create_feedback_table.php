@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('job_id');
+            $table->foreignId('job_id')->constrained('jobs')->onDelete('cascade');
             $table->text('comment');
             $table->timestamps();
         });
