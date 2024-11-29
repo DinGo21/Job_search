@@ -77,6 +77,51 @@
 	font-size: 1.8rem;
 }
 
+.feedback {
+	width: 90%;
+	margin: auto;
+}
+
+@media (min-width: 768px) {
+	.feedback {
+		width: 80%;
+	}
+}
+
+.feedbackTitle {
+	text-align: center;
+	color: var(--darkGray);
+	font-size: 2.5rem;
+	margin-bottom: 1.2rem;
+}
+
+@media (min-width: 768px) {
+	.feedbackTitle {
+		text-align: start;
+	}
+}
+
+.comment {
+	-webkit-box-shadow: 6px 6px 13px 0px rgba(227,227,227,1);
+	-moz-box-shadow: 6px 6px 13px 0px rgba(227,227,227,1);
+	box-shadow: 6px 6px 13px 0px rgba(227,227,227,1);
+	margin-bottom: 2rem;
+	/* border-radius: 1rem; */
+	border: 2px solid var(--gray);
+	padding: 1.5rem;
+}
+.commentText {
+	color: var(--darkGray);
+	margin-bottom: 1.5rem;
+}
+
+.commentCreatedAt {
+	font-weight: 500;
+	border-radius: 1rem;
+	padding: 1rem;
+	color: var(--darkGray);
+}
+
 .showOptions {
 	display: flex;
 	margin-right: 2rem;

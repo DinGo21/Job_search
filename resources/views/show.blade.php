@@ -16,16 +16,26 @@
                             <span class="jobStatusNotActive">finished</span>
                         @endif
                     </p>
-                    <p class="showDetailsCreatedAt">created: <span id="createdAt">{{$job->created_at}}</span></p>
-                    <p class="showDetailsUpdatedAt">update: <span id="updatedAt">{{$job->updated_at}}</span></p>
+                    <p class="showDetailsCreatedAt">created: <span>{{$job->created_at}}</span></p>
+                    <p class="showDetailsUpdatedAt">update: <span>{{$job->updated_at}}</span></p>
                 </section>
             </div>
         </section>
         <section class="showDescription">
             <p class="showDescriptionText">{{$job->description}}</p>
         </section>
+        <section class="feedback">
+            <h3 id="feedbackTitle" class="feedbackTitle">Feedback:</h3>
+            @foreach ($job->feedback as $feed)
+                <article class="comment">
+                    <p class="commentText">{{$feed->comment}}</p>
+                    <div class="commentDetails">
+                        <p id="createdAt" class="commentCreatedAt">{{$feed->created_at}}</p>
+                    </div>
+                </article>
+            @endforeach
+        </section>
         <section class="showOptions">
-            <a class="showDelete" href="{{route('index') . '?action=delete&id=' . $job->id}}">Delete</a>
             <a class="showReturn" href="{{route('index')}}">Return</a>
         </section>
     </div>

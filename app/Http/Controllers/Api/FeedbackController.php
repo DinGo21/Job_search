@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Job;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Feedback;
+use Illuminate\Http\Request;
 
-class JobController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return response()->json(Job::all(), 200);
+        return response()->json(Feedback::all(), 200);
     }
 
     /**
@@ -29,15 +29,11 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        $job = Job::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'company' => $request->company,
-            'company_image' => $request->company_image,
-            'status' => $request->status
+        $feedback = Feedback::create([
+            'job_id' => $request->job_id,
+            'comment' => $request->comment
         ]);
-        $job->save();
-        return response()->json($job, 200);
+        return response()->json($feedback, 200);
     }
 
     /**
@@ -45,12 +41,12 @@ class JobController extends Controller
      */
     public function show(string $id)
     {
-        return response()->json(Job::find($id), 200);
+        return response()->json(Feedback::find($id), 200);
     }
 
     /**
      * Show the form for editing the specified resource.
-     */
+    //  */
     // public function edit(string $id)
     // {
     //     //
@@ -61,17 +57,13 @@ class JobController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $job = Job::find($id);
+        $feedback = Feedback::find($id);
 
-        $job->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'company' => $request->company,
-            'company_image' => $request->company_image,
-            'status' => $request->status
+        $feedback->update([
+            'job_id' => $request->job_id,
+            'comment' => $request->comment
         ]);
-        $job->save();
-        return response()->json($job, 200);
+        return response()->json($feedback, 200);
     }
 
     /**
@@ -79,6 +71,7 @@ class JobController extends Controller
      */
     public function destroy(string $id)
     {
-        Job::find($id)->delete();
+        Feedback::find($id)->delete();
+
     }
 }

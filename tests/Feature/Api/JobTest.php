@@ -80,7 +80,7 @@ class JobTest extends TestCase
             'status' => 1
         ];
         $response = $this->put(route('apiupdate', 1), $data);
-        $response = $this ->get(route('apiindex'));
+        $response = $this->get(route('apiindex'));
         $response->assertStatus(200)
                 ->assertJsonCount(1)
                 ->assertJsonFragment($data);

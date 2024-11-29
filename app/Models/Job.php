@@ -17,4 +17,9 @@ class Job extends Model
         'company_image',
         'status'
     ];
+
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class);
+    }
 }
