@@ -15,81 +15,70 @@ class FeedbackTest extends TestCase
      */
     use RefreshDatabase;
 
-    public function test_ReadOneElement()
+    public function test_ReadOneComment()
     {
-        Job::factory(2)->create([
-            'title' => 'testTitle',
-            'description' => 'testDescription',
-            'company' => 'testCompany',
-            'company_image' => 'testCompanyImage',
-            'status' => 0
-        ]);
+        Job::factory()->create();
         Feedback::factory(2)->create([
             'job_id' => 1,
             'comment' => 'testComment'
         ]);
 
-        $response = $this->get(route('apishowComments', 2));
+        $response = $this->get('/api/jobs/1/comments/2');
         $response->assertStatus(200)
-                ->assertJsonFragment(['id' => 2]);
+                ->assertJsonFragment(['job_id' => 1]);
+    }
+
+    public function test_ReadAllCommentsFromJob()
+    {
+        Job::factory()->create();
+        Feedback::factory(2)->create([
+            'job_id' => 1,
+            'comment' => 'testComment'
+        ]);
+
+        $response = $this->get('/api/jobs/1/comments');
+        $response->assertStatus(200)
+                ->assertJsonCount(2);
     }
 
     public function test_DeleteOneComment()
     {
-        Job::factory(3)->create([
-            'title' => 'testTitle',
-            'description' => 'testDescription',
-            'company' => 'testCompany',
-            'company_image' => 'testCompanyImage',
-            'status' => 0
-        ]);
+        Job::factory()->create();
         Feedback::factory(3)->create([
             'job_id' => 1,
             'comment' => 'testComment'
         ]);
 
-        $this->delete(route('apidestroyComments', 3));
+        $this->delete('/api/jobs/1/comments/3');
         $this->assertDatabaseCount('feedback', 2);
     }
 
     public function test_CreateNewComment()
     {
-        Job::factory(4)->create([
-            'title' => 'testTitle',
-            'description' => 'testDescription',
-            'company' => 'testCompany',
-            'company_image' => 'testCompanyImage',
-            'status' => 0
-        ]);
+        Job::factory()->create();
         $data = 
         [
-            'job_id' => 4,
+            'job_id' => 1,
             'comment' => 'testing'
         ];
 
-        $response = $this->post(route('apistoreComments'), $data);
-        $response = $this->get(route('apishowComments', 1));
+        $response = $this->post('/api/jobs/1/comments', $data);
+        $response = $this->get('/api/jobs/1/comments/1');
         $response->assertStatus(200)
                 ->assertJsonFragment($data);
     }
 
     public function test_UpdateOneComment()
     {
-        Job::factory(4)->create([
-            'title' => 'testTitle',
-            'description' => 'testDescription',
-            'company' => 'testCompany',
-            'company_image' => 'testCompanyImage',
-            'status' => 0
-        ]);
+        Job::factory(2)->create();
         $data = 
         [
-            'job_id' => 4,
+            'job_id' => 1,
             'comment' => 'testing'
         ];
 
-        $response = $this->post(route('apistoreComments'), $data);
-        $response = $this->get(route('apishowComments', 1));
+        $response = $this->post('/api/jobs/1/comments', $data);
+        $response = $this->get('/api/jobs/1/comments/1');
         $response->assertStatus(200)
                 ->assertJsonFragment($data);
 
@@ -99,8 +88,8 @@ class FeedbackTest extends TestCase
             'comment' => 'testing more tests'
         ];
 
-        $response = $this->put(route('apiupdateComments', 1), $data);
-        $response = $this->get(route('apishowComments', 1));
+        $response = $this->put('/api/jobs/1/comments/1', $data);
+        $response = $this->get('/api/jobs/2/comments/1');
         $response->assertStatus(200)
                 ->assertJsonFragment($data);
     }
