@@ -102,23 +102,23 @@
 }
 
 .comment {
-	-webkit-box-shadow: 7px 7px 5px 0px rgba(219,219,219,1);
-	-moz-box-shadow: 7px 7px 5px 0px rgba(219,219,219,1);
-	box-shadow: 7px 7px 5px 0px rgba(219,219,219,1);
+	-webkit-box-shadow: 6px 6px 13px 0px rgba(227,227,227,1);
+	-moz-box-shadow: 6px 6px 13px 0px rgba(227,227,227,1);
+	box-shadow: 6px 6px 13px 0px rgba(227,227,227,1);
 	margin-bottom: 2rem;
-	border-radius: 1rem;
-	border: 3px solid var(--gray);
+	/* border-radius: 1rem; */
+	border: 2px solid var(--gray);
 	padding: 1.5rem;
 }
 .commentText {
-	font-weight: 500;
+	color: var(--darkGray);
 	margin-bottom: 1.5rem;
 }
 
 .commentCreatedAt {
+	font-weight: 500;
 	border-radius: 1rem;
 	padding: 1rem;
-	font-weight: 500;
 	color: var(--darkGray);
 }
 
