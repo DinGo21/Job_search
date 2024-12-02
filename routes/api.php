@@ -12,8 +12,8 @@ Route::get('/jobs/{id}', [JobController::class, 'show'])->name('apishow');
 Route::put('/jobs/{id}', [JobController::class, 'update'])->name('apiupdate');
 Route::delete('/jobs/{id}', [JobController::class, 'destroy'])->name('apidestroy');
 
-Route::get('/jobs/comments', [FeedbackController::class, 'index'])->name('apiindexComments');
-Route::post('/jobs/comments', [FeedbackController::class, 'store'])->name('apistoreComments');
-Route::get('/jobs/comments/{id}', [FeedbackController::class, 'show'])->name('apishowComments');
-Route::put('/jobs/comments/{id}', [FeedbackController::class, 'update'])->name('apiupdateComments');
-Route::delete('/jobs/comments/{id}', [FeedbackController::class, 'destroy'])->name('apidestroyComments');
+Route::get('/jobs/{jobId}/comments', [FeedbackController::class, 'index'])->name('apiindexComments');
+Route::post('/jobs/{jobId}/comments', [FeedbackController::class, 'store'])->name('apistoreComments');
+Route::get('/jobs/{jobId}/comments/{commentId}', [FeedbackController::class, 'show'])->name('apishowComments');
+Route::put('/jobs/{jobId}/comments/{commentId}', [FeedbackController::class, 'update'])->name('apiupdateComments');
+Route::delete('/jobs/{jobId}/comments/{commentId}', [FeedbackController::class, 'destroy'])->name('apidestroyComments');
