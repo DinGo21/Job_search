@@ -15,7 +15,7 @@ class FeedbackTest extends TestCase
      */
     use RefreshDatabase;
 
-    public function test_ReadOneComment()
+    public function test_ReadOneComment(): void
     {
         Job::factory()->create();
         Feedback::factory(2)->create([
@@ -28,7 +28,7 @@ class FeedbackTest extends TestCase
                 ->assertJsonFragment(['job_id' => 1]);
     }
 
-    public function test_ReadAllCommentsFromJob()
+    public function test_ReadAllCommentsFromJob(): void
     {
         Job::factory()->create();
         Feedback::factory(2)->create([
@@ -41,7 +41,7 @@ class FeedbackTest extends TestCase
                 ->assertJsonCount(2);
     }
 
-    public function test_DeleteOneComment()
+    public function test_DeleteOneComment(): void
     {
         Job::factory()->create();
         Feedback::factory(3)->create([
@@ -53,7 +53,7 @@ class FeedbackTest extends TestCase
         $this->assertDatabaseCount('feedback', 2);
     }
 
-    public function test_CreateNewComment()
+    public function test_CreateNewComment(): void
     {
         Job::factory()->create();
         $data = 
@@ -68,7 +68,7 @@ class FeedbackTest extends TestCase
                 ->assertJsonFragment($data);
     }
 
-    public function test_UpdateOneComment()
+    public function test_UpdateOneComment(): void
     {
         Job::factory(2)->create();
         $data = 

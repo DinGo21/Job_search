@@ -11,7 +11,7 @@ class JobTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_IndexIsWorking()
+    public function test_IndexIsWorking(): void
     {
         $this->withoutExceptionHandling();
 
@@ -20,7 +20,7 @@ class JobTest extends TestCase
                 ->assertViewIs('index');
     }
 
-    public function test_PauseOneElementStatusFromIndex()
+    public function test_PauseOneElementStatusFromIndex(): void
     {
         $this->withoutExceptionHandling();
 
@@ -32,7 +32,7 @@ class JobTest extends TestCase
         $this->assertEquals($job->status, 0);
     }
 
-    public function test_ResumeOneElementStatusFromIndex()
+    public function test_ResumeOneElementStatusFromIndex(): void
     {
         $this->withoutExceptionHandling();
 
@@ -44,7 +44,7 @@ class JobTest extends TestCase
         $this->assertEquals($job->status, 1);
     }
 
-    public function test_DeleteOneElementFromIndex()
+    public function test_DeleteOneElementFromIndex(): void
     {
         $this->withoutExceptionHandling();
 
@@ -55,7 +55,7 @@ class JobTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_ShowIsWorking()
+    public function test_ShowIsWorking(): void
     {
         $this->withoutExceptionHandling();
 

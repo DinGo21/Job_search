@@ -14,7 +14,7 @@ class JobTest extends TestCase
      */
     use RefreshDatabase;
 
-    public function test_ReadAllElements()
+    public function test_ReadAllElements(): void
     {
         Job::factory(3)->create();
         $response = $this->get(route('apiindex'));
@@ -22,7 +22,7 @@ class JobTest extends TestCase
                 ->assertJsonCount(3);
     }
 
-    public function test_ReadOneElement()
+    public function test_ReadOneElement(): void
     {
         Job::factory(2)->create();
         $response = $this->get(route('apishow', 1));
@@ -30,14 +30,14 @@ class JobTest extends TestCase
                 ->assertJsonFragment(['id' => 1]);
     }
 
-    public function test_DeleteOneElement()
+    public function test_DeleteOneElement(): void
     {
         Job::factory(3)->create();
         $this->delete(route('apidestroy', 3));
         $this->assertDatabaseCount('jobs', 2);
     }
 
-    public function test_CreateNewElement()
+    public function test_CreateNewElement(): void
     {
         $data = 
         [
@@ -55,7 +55,7 @@ class JobTest extends TestCase
                 ->assertJsonFragment($data);
     }
 
-    public function test_UpdateOneElement()
+    public function test_UpdateOneElement(): void
     {
         $data = 
         [
