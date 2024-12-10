@@ -1,0 +1,133 @@
+.docs {
+	width: 95%;
+	margin: auto;
+	margin-top: 8rem;
+	margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+	.docs {
+		width: 80%;
+	}
+}
+
+.docsTitle {
+	font-size: 4rem;
+	margin-bottom: 6rem;
+	text-align: center;
+}
+
+.docsSection {
+	margin-bottom: 5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--gray);
+}
+
+.docsSection:last-of-type {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.docsSectionContainer {
+	margin-bottom: 5.6rem;
+}
+.docsSectionTitle {
+	text-align: center;
+	color: var(--primary);
+	font-size: 2.8rem;
+	margin-bottom: 3.8rem;
+}
+
+@media (min-width: 768px) {
+	.docsSectionTitle {
+		text-align: left;
+	}
+}
+
+.docsSectionSubtitle {
+	font-size: 2.2rem;
+	margin-bottom: 3.2rem;
+}
+
+.docsSectionText, .docsSectionLis {
+	margin-bottom: 2.8rem;
+}
+
+.docsSectionText, .docsSectionListElement {
+	color: #5e5e5e;
+	font-size: 1.8rem;
+}
+
+.docsSectionText {
+	line-height: 1.8;
+}
+
+.docsSectionList {
+	padding-left: 2rem;
+}
+
+.docsSectionListElement span {
+	color: var(--primary);
+	font-weight: 500;
+}
+
+.docsSectionListElement {
+	margin-bottom: 1rem;
+}
+
+.endpoint {
+	color: var(--black);
+	font-size: 1.6rem;
+	background-color: #f1f1f1;
+	font-weight: 700;
+	padding: 0.4rem;
+}
+
+.codeBlock {
+	background-color: #000d30;
+	padding: 2rem;
+	border-radius: 1rem;
+	margin-bottom: 3.4rem;
+}
+
+.codeBlockText {
+	color: #f1f1f1;
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+	.codeBlockText {
+		font-size: 1.9rem;
+	}
+}
+
+.method {
+	font-weight: 700;
+	font-size: 1.8rem;
+	padding-right: 1rem;
+	border-right: 2px solid #f1f1f1;
+}
+
+@media (min-width: 768px) {
+	.method {
+		font-size: 2rem;
+	}
+}
+
+.get {
+	color: #68ff60;
+}
+
+.post {
+	color: #ffff76;
+}
+
+.put {
+	color: #00c8ff;
+}
+
+.delete {
+	color: #ff3668;
+}

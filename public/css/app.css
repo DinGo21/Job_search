@@ -1,5 +1,6 @@
 @import url(show.css);
 @import url(index.css);
+@import url(docs.css);
 
 :root {
 	--white: #FFFFFF;

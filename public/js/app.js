@@ -50,10 +50,15 @@ function timestampsFormat()
 function setHeaderLinkActive(path)
 {
 	const index = document.getElementById("index");
+	const docs = document.getElementById("docs");
 
 	if (!path)
 	{
 		index.classList.add("headerLinkActive");
+	}
+	else if (path === "docs")
+	{
+		docs.classList.add("headerLinkActive");
 	}
 }
 
