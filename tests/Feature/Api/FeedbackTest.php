@@ -15,6 +15,16 @@ class FeedbackTest extends TestCase
      */
     use RefreshDatabase;
 
+    public function test_FeedbackBelongsToJob(): void
+    {
+        Job::factory()->create();
+        $feedback = Feedback::factory()->create([
+            'job_id' => 1
+        ]);
+
+        $this->assertInstanceOf(Job::class, $feedback->job);
+    }
+
     public function test_ReadOneComment(): void
     {
         Job::factory()->create();
