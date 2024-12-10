@@ -31,21 +31,6 @@ class JobController extends Controller
         $jobs = Job::all();
         return view('index', compact('jobs'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    // public function create()
-    // {
-    // }
-    
-    /**
-     * Store a newly created resource in storage.
-     */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
     
     /**
      * Display the specified resource.
@@ -65,14 +50,6 @@ class JobController extends Controller
     {
         Job::find($id)->update(['status' => $status]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    // public function update(Request $request, string $id)
-    // {
-    //     //
-    // }
 
     /**
      * Remove the specified resource from storage.
