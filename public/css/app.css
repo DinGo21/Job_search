@@ -1,0 +1,119 @@
+@import url(show.css);
+@import url(index.css);
+@import url(docs.css);
+
+:root {
+	--white: #FFFFFF;
+	--black: #1f1f1f;
+	--gray: #e3e3e3;
+	--darkGray: #7a7a7a;
+	--red: #ff0000;
+	--green: #00e842;
+	--primary: #0003ac;
+}
+
+/* general */
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: "Roboto", serif;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	color: var(--black);
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.8rem;
+}
+
+a {
+	text-decoration: none;
+	color: var(--black);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* header */
+
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: var(--white);
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	border-bottom: 1px solid var(--gray);
+	margin-bottom: 1rem;
+}
+
+.headerTitle {
+	font-weight: 700;
+}
+
+.headerTitle span {
+	color: var(--primary);
+	font-size: 3.3rem;
+}
+
+.headerNav {
+	display: flex;
+	align-items: center;
+	margin-right: 1rem;
+}
+
+.headerLink {
+	font-size: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.headerLink:first-child {
+	border-right: 2px solid var(--gray);
+}
+
+.headerLink:hover {
+	color: var(--primary)
+}
+
+.headerLinkActive {
+	color: var(--primary);
+}
+
+/* footer */
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--white);
+	background-color: var(--black);
+	padding: 1.5rem;
+	margin-top: 1rem;
+}
+
+.footerCopyright {
+	margin: 2.5rem;
+	color: var(--gray);
+}
+
+.footerCopyright span {
+	font-weight: 700;
+	color: var(--white);
+}
