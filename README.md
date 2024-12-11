@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Job_search
-=======
 # Job Search
 
 ![Banner](./public/img/banner.png)
@@ -132,4 +129,3 @@ php artisan test --coverage
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
   </a>
 </div>
->>>>>>> 5e39635bb39b3718e27ed99a2a7e27de1c1dc115
